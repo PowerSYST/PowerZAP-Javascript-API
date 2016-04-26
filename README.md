@@ -2,7 +2,10 @@
 Esta biblioteca lhe permite criar páginas personalizadas utilizando as ferramentas do PowerZAP.
 
 ##Exemplo de uso
-(Repositório do Exemplo)[https://github.com/PowerSYST/PowerZAP-Javascript-Example]
+Disponibilizamos o exemplo de utilização da nossa Api, a qual lhe promove mais liberdade na personalização
+de suas páginas de atendimento online.
+
+[Repositório do Exemplo](https://github.com/PowerSYST/PowerZAP-Javascript-Example)
 
 ##Instalação
 ```
