@@ -1,12 +1,26 @@
 ##Introdução
 Esta biblioteca lhe permite criar páginas personalizadas utilizando as ferramentas do PowerZAP.
 
+##Exemplo de uso
+(Repositório do Exemplo)[https://github.com/PowerSYST/PowerZAP-Javascript-Example]
+
 ##Instalação
 ```
 <script src="https://widget.powerzap.com.br/js/api.min.js charset="utf-8"></script>
 ```
 
 ##Métodos
+__Iniciar objeto__
+```
+chat = new PowerZAP_API({
+    hash    : "HASH_EMPRESA", //Diponível em seu painel
+    company : ID_EMPRESA //Diponível em seu painel
+}, function(powerzap) {
+
+    //Chama os métodos abaixo
+
+});
+```
 
 __Iniciar um atendimento com o cliente__
 
@@ -18,7 +32,7 @@ var object = {
 	department: 'id do departamento' // 10
 };
 
-initChat(object, function(response) {
+powerzap.initChat(object, function(response) {
     //Callback com sucesso
 
 }, function(response) {
@@ -31,12 +45,12 @@ __Requisitar o Me Chama no WhatsApp__
 
 ```
 var object = {
-	name :  'Nome completo do cliente',
-	whatsapp: 'Número do Whatsapp com DDI e DDD',
-	department: 'id do departamento'
+	name :  'Nome completo do cliente', //João Lima
+	whatsapp: 'Número do Whatsapp com DDI e DDD', // +55 (99) 9 9999-9999
+	department: 'id do departamento' // 10
 };
 
-requestCallWhatsApp(object, function(response) {
+powerzap.requestCallWhatsApp(object, function(response) {
   //Callback com sucesso
 
 }, function(response) {
@@ -50,7 +64,7 @@ __Finalizar o chat aberto__
 ```
 var object = {};
 
-closeChat(object, function(response) {
+powerzap.closeChat(object, function(response) {
   //Callback com sucesso
 
 }, function(response) {
@@ -63,11 +77,11 @@ __Enviar o Feedback do atendimento finalizado__
 
 ```
 var object = {
-    score: 'Nota do atendimento de 0-5',
-    message: 'Comentário sobre o atendimento'
+    score: 'Nota do atendimento de 0-5', // 5
+    message: 'Comentário sobre o atendimento' //Gostei muito do atendimento
 };
 
-sendFeeback(object, function(response) {
+powerzap.sendFeeback(object, function(response) {
     //Callback com sucesso
 
 }, function(response) {
@@ -78,7 +92,7 @@ sendFeeback(object, function(response) {
 
 __Recebe notificações sempre que houver uma alteração no estado da conversa ou uma nova mensagem__
 ```
-notificationListener(function(res) {
+powerzap.notificationListener(function(res) {
 
     for(var i in res.messages) {
         //Messages
